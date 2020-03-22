@@ -18,7 +18,7 @@ To be completed
 
 | Official Full Name  | Student ID (MTech Applicable)  | Work Items (Who Did What) | Email (Optional) |
 | :------------ |:---------------:| :-----| :-----|
-| LIM LI WEI | A---- | --- | --- |
+| LIM LI WEI | A0087855L | --- | E0319479@u.nus.edu |
 | PREM CHANDRAN | A--- | --- | --- |
 | YONG QUAN ZHI, TOMMY | A0195353Y | ---| E0384984@u.nus.edu |
 
