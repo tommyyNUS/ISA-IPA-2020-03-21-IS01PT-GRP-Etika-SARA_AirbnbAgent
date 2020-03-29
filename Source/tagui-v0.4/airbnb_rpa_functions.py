@@ -64,8 +64,9 @@ def close_cookie_popup():
     if r.present("//button[@class='optanon-allow-all accept-cookies-button']") == True: r.click("//button[@class='optanon-allow-all accept-cookies-button']")
 
 def monthyearconversion(datestamp):
-    monthyear = datestamp[3:]
-    return(monthyear)
+    #monthyear = datestamp[3:]
+    datestamp = datestamp.split(" ")
+    return(datestamp[1]+" "+datestamp[2])
 
 
 def monthyearnavigate(monthyear):

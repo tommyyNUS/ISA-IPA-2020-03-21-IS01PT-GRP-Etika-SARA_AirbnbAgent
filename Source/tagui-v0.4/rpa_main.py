@@ -22,6 +22,7 @@ def process(country, numOfAdults, numOfInfants, numOfChildren, fromDate, toDate)
     #airbnb.recreate_temp()
     airbnb.snap_map()
     data = airbnb.extract_stay_info_as_data()
+    print("Sending Date back to controller")
     print(data)
     r.close()
 
