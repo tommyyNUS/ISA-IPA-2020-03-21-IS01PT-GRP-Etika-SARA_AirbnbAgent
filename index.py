@@ -7,7 +7,7 @@ import requests
 import json
 import pusher
 import sys
-sys.path.insert(0,'./Source/tagui-v1.0/')
+sys.path.insert(0,'./Source/tagui-v1.1/')
 import rpa_main as airbnb
 from pandas.io.json import json_normalize
 import pandas as pd
