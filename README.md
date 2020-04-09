@@ -2,7 +2,7 @@
 
 ## SECTION 1 : AIRBNB Agent
 ## NUS ISS Intelligent Agent
-<img src="Miscellaneous/picture1.png"
+<img src="Images/chatbot.png"
      style="float: left; margin-right: 0px;" />
 
 <br>
@@ -51,7 +51,7 @@ source env/bin/activate
 
 OR Windows
 
-env/Scripts/activate
+env\Scripts\activate
 
 3. Enter "pip install -r requirements.txt". This will install the required dependencies.
 
