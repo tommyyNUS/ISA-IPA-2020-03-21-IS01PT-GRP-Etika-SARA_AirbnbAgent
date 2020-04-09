@@ -29,12 +29,7 @@ def process(country, numOfAdults, numOfInfants, numOfChildren, fromDate, toDate)
     elapsed = end - start
     print(f'Time Elapsed: {elapsed} seconds')
 	
-    response =  """
-            Country : {0}
-            Num: {1}
-            From: {2}
-            To: {3}
-        """.format(country, numOfPeople, fromDate, toDate)
+    response =  data
     
     return response
 
