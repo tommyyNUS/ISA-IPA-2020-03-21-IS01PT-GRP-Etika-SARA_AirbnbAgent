@@ -10,5 +10,5 @@ pandas==1.0.3
 numpy==1.18.2
 geopy==1.21.0
 pyshorteners==1.0.1
-python-telegram==bot-12.5.1
+python-telegram-bot==12.5.1
 branca==0.4.0
