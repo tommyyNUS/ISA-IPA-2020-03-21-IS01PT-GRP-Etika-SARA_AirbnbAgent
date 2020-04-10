@@ -39,6 +39,7 @@ def index():
     
     #Check if telegram bot
     telegramChannel = False
+    telegramChatID = ""
     if 'source' in data['originalDetectIntentRequest'] and data['originalDetectIntentRequest']['source'] == 'telegram':
         telegramChatID = data['originalDetectIntentRequest']['payload']['data']['from']['id']
         telegramChannel = True
@@ -60,7 +61,7 @@ def index():
     
     response = airbnb.process(country, int(numOfAdults), int(numOfInfants), int(numOfChildren), fromDate, toDate)
 
-    process_reponse(response)
+    process_reponse(response, country, numOfAdults, numOfInfants, numOfChildren, fromDate, toDate, durationOfStay, telegramChatID, telegramChannel)
 
     #Dialogflow will timeout after 5 seconds, this reply is given in case RPA fails 
     reply = {
@@ -68,7 +69,7 @@ def index():
     }
     return jsonify(reply)
 
-def process_reponse(response):
+def process_reponse(response, country, numOfAdults, numOfInfants, numOfChildren, fromDate, toDate, durationOfStay, telegramChatID, telegramChannel):
     stringResponse = "<u><b>Your search criteria</b></u>\n" + "City: "+country+"\nAdults: "+str(int(numOfAdults))+"\nInfants: "+str(int(numOfInfants))+"\nChildren: "+str(int(numOfChildren))+"\nFrom: "+fromDate+"\nTo: "+toDate+"\nDuration of stay(days): "+str(durationOfStay)+"\n\n"
     stringResponse = stringResponse + "Here are your 5 most recommended listings...\n"
     i=1
@@ -224,10 +225,10 @@ def convert_html_to_jpg():
     r.init()
     r.url(URL)
     print('Waiting to load...')
-    print('Zooming out')
-    r.wait(5) 
+    r.wait(10)
+    print('Zooming out') 
     r.click('//*[@class="leaflet-control-zoom-out"]')
-    #r.wait(3)
+    r.wait(1)
     r.click('//*[@class="leaflet-control-zoom-out"]')
     r.wait(3)  
     print('Snapping') 
