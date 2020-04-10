@@ -33,51 +33,45 @@ To be completed
 
 ## SECTION 5 : USER GUIDE
 
-`<Github File Link>` : <https://github.com/>
+`<Download the user guide>` : <https://github.com/>
 
-Download the guide from the link above and follow the instructions to deploy the chatbot locally.
+Download the guide from the link above for a more detailed description on how to configure, install, deploy the necessary components for this project. 
+
 Please ensure you are using python 3.6 or higher.
-Once you have downloaded and unzipped the project file, CD into your project root folder "./ISA-IPA-2020-03-21-IS01PT-GRP-Etika-AirbnbAgent"
+Once you have downloaded and unzipped the project file, CD into your project root folder "<your-file-path>/ISA-IPA-2020-03-21-IS01PT-GRP-Etika-AirbnbAgent"
 
-1. Create a python env <br>
-python3 -m venv env
+**Step 1**. Create a python env.
+"python3 -m venv env" OR use "python -m venv env"
 
-OR
+**Step 2**. Activate the python env. You should see (env) next to your command line.
+For Mac: "source env/bin/activate"
+For Windows: "env\Scripts\activate"
 
-python -m venv env
+**Step 3**. Enter "pip install -r requirements.txt" OR "pip3 install -r requirements.txt". This will install all the required dependencies.
 
-2. Activate the python env. You should see (env) next to your command line <br>
-source env/bin/activate
+**Step 4**. Once installation is complete, enter " flask run". This will deploy your server locally on your pc.
 
-OR Windows
+**Step 5**. You need to open a channel to your computer so that dialogflow and the telegram bot can communicate with your server. To do this, we will use ngrok. With a new command prompt/terminal CD to the project root folder "<your-file-path>/ISA-IPA-2020-03-21-IS01PT-GRP-Etika-AirbnbAgent". There will be an "ngrok_win" and an "ngrok_mac" file. Rename the file with your OS in use to just "ngrok". E.g If you are using Windows, delete the "_win" from "ngrok_win".
+From your command prompt, enter "ngrok http localhost:5000".
+Take note of the https link. It should look something like this "https://f34bb6f6.ngrok.io". Take note of this link.
 
-env\Scripts\activate
-
-3. Enter "pip install -r requirements.txt". This will install the required dependencies.
-
-4. Once installation is complete, enter " flask run".
-
-5. Launch ngrok. With a new command prompt/terminal CD to the project root folder. "./ISA-IPA-2020-03-21-IS01PT-GRP-Etika-AirbnbAgent" <br>
-Enter "ngrok http localhost:5000" <br>
-Take note of the https link. It should look something like this "https://f34bb6f6.ngrok.io"
-
-6. Import the dialogflow agent on dialogflow. Go to https://dialogflow.cloud.google.com/ and log in with your account. <br>
-Create a new agent and give it a name e.g. "AIRBNB AGENT". <br>
-Once create click on the settings gear icon next the agent name and click the "Export and Import" tab. <br>
+**Step 6**. Go to https://dialogflow.cloud.google.com/ and log in with your account. Proceed to iImport the dialogflow agent(IPA-AIRBNB.zip) on dialogflow.
+To do this, first create a new agent and give it a name e.g. "AIRBNB AGENT".
+Once created click on the settings gear icon next the agent name and click the "Export and Import" tab.
 Click "Import From Zip" and select the IPA-AGENT zip file. Type in "IMPORT" into the text box and click "IMPORT".
 
-7. Once the agent has been imported and training is done, click on the "Fulfillment" option on the left menu bar. Enable the webhook(If it is not enabled), and
-copy and paste the ngrok https link on the URL field. Add in "/get_recommendations" right at the end of the ngrok link. Scroll to the bottom and click save.
+**Step 7**. Once the agent has been imported and training is done, click on the "Fulfillment" option on the left menu bar. Enable the webhook(If it is not enabled), and copy and paste the ngrok https link on the URL field. Add in "/get_recommendations" right at the end of the ngrok link. Scroll to the bottom and click save. Give it some time to save your settings.
 
-8. Now you are ready to test dialogs from the google assistant from the right side of the screen. <br>
-Try to paste the following dialog in the chat field. <br>
-"Can you find some recommendations for 2 adults, 1 child and 1 infant to stay in Vienna from 5th June to 17th June?"
+**Step 8**. Now open up your telegram app. From the search bar of your chat page, type "IPAAIRBNBBot" click on the result. A chat window will be created with the bot, click 'Start'. You can now test sending some search queries such as "Can you find some recommendations for 2 adults, 1 child and 1 infant to stay in Vienna from 5th June to 17th June?".
+
+**Additional notes**: You can also test dialogs from the google assistant via the dialogflow website located on the right side of the screen.
+Try to paste the following dialog in the chat field.
 
 ---
 
 ## SECTION 6 : PROJECT REPORT / PAPER
 
-`<Github File Link>` : <https://github.com/>
+`<Download the Project Report>` : <https://github.com/>
 
 ## SECTION 7 : MISCELLANEOUS
 

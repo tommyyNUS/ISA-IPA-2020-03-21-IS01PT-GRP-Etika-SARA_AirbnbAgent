@@ -86,7 +86,7 @@ def process_reponse(response, country, numOfAdults, numOfInfants, numOfChildren,
         
         stringResponse = stringResponse+'\n<u><i>Top 10 Venues near this listing</i></u>\n'
         
-        #Create a map of folium
+        #Create a map with folium then convert html to png
         create_folium_map(nearbyVenues, coord[0], coord[1], telegramChatID)
         convert_html_to_jpg()
 
@@ -106,6 +106,7 @@ def process_reponse(response, country, numOfAdults, numOfInfants, numOfChildren,
         
         i+=1
         stringResponse = ""
+    telegram_bot_sendtext("\U0001F601 Search has been completed. Plese review our recommendations, thank you! \U0001F6C4\U00002708\U0001F3E1",telegramChatID)
 
 def getDurationOfStay(fromDate, toDate):
     formattedDate = fromDate
@@ -220,7 +221,7 @@ def telegram_bot_sendGroupMedia(bot_pic_URLs, id, listingNumber):
     response = bot.sendMediaGroup(chat_id=bot_chatID, media=imgArray, disable_notification=True)
 
 def convert_html_to_jpg():
-    URL = "http://127.0.0.1:5000/get_html"
+    URL = "http://127.0.0.1:5000/get_html" #localhost
 
     r.init()
     r.url(URL)
@@ -233,7 +234,6 @@ def convert_html_to_jpg():
     r.wait(3)  
     print('Snapping') 
     r.snap('//html/body',"./Images/map.jpg")
-    #r.snap('//*[@class="folium-map leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"]',"./Images/map.jpg")
     print('Done.')
 
     r.close()
