@@ -84,7 +84,7 @@ def process_reponse(response, country, numOfAdults, numOfInfants, numOfChildren,
         nearbyVenues = get_venues(coord[0], coord[1])
         venues = pd.DataFrame(nearbyVenues)
         
-        stringResponse = stringResponse+'\n<u><i>Top 10 Venues near this listing</i></u>\n'
+        stringResponse = stringResponse+'\n<u><i>Top Venues near this listing</i></u>\n'
         
         #Create a map with folium then convert html to png
         create_folium_map(nearbyVenues, coord[0], coord[1], telegramChatID)
@@ -101,7 +101,7 @@ def process_reponse(response, country, numOfAdults, numOfInfants, numOfChildren,
         if telegramChannel:
             telegram_bot_sendtext(stringResponse, telegramChatID)
         #Send images as an album
-        telegram_bot_sendGroupMedia(listingDetails['picurl'][0:3], telegramChatID, i)
+        telegram_bot_sendGroupMedia(listingDetails['picurl'][0:7], telegramChatID, i)
 
         i+=1
         stringResponse = ""
