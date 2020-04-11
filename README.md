@@ -67,7 +67,6 @@ Click "Import From Zip" and select the IPA-AGENT zip file. Type in "IMPORT" into
 **Step 9**. Now open up your telegram app. From the search bar of your chat page, type "IPAAIRBNBBot" click on the result. A chat window will be created with the bot, click 'Start'. You can now test sending some search queries such as "Can you find some recommendations for 2 adults, 1 child and 1 infant to stay in Vienna from 5th June to 17th June?".
 
 **Additional notes**: You can also test dialogs from the google assistant via the dialogflow website located on the right side of the screen.
-Try to paste the following dialog in the chat field.
 
 ---
 
