@@ -100,10 +100,9 @@ def process_reponse(response, country, numOfAdults, numOfInfants, numOfChildren,
         #Send text info
         if telegramChannel:
             telegram_bot_sendtext(stringResponse, telegramChatID)
-        
         #Send images as an album
         telegram_bot_sendGroupMedia(listingDetails['picurl'][0:7], telegramChatID, i)
-        
+
         i+=1
         stringResponse = ""
     telegram_bot_sendtext("\U0001F601 Search has been completed. Plese review our recommendations, thank you! \U0001F6C4\U00002708\U0001F3E1",telegramChatID)
@@ -161,7 +160,6 @@ def create_folium_map(venues, lati, longi, id):
     for lat, lon, name, cat in zip(venues['Latitude'],venues['Longitude'], venues['Name'], venues['Category']):
         popup_text = popup_text.format(i,12,12)
         
-        #folium.CircleMarker(location=(lat,lon),radius= 20,color=color,popup="Test",fill=True).add_child(folium.Popup(str(i+1), parse_html=True,show=True)).add_to(map)
         folium.Marker([lat, lon], popup='',icon=folium.Icon(color=color[i], icon='map-marker-alt')).add_to(map)
         htmlText = htmlText + '<li style="font-size:12px"><i class="fa fa-map-marker" style="color:'+color[i]+';font-size: 5em;"></i> '+name+' ('+cat+')</li>'
         i+=1
@@ -226,12 +224,11 @@ def convert_html_to_jpg():
     r.init()
     r.url(URL)
     print('Waiting to load...')
-    r.wait(20)
+    r.wait(15)
     print('Zooming out') 
     r.click('//*[@class="leaflet-control-zoom-out"]')
-    r.wait(1)
     r.click('//*[@class="leaflet-control-zoom-out"]')
-    r.wait(4)  
+    r.wait(3)  
     print('Snapping') 
     r.snap('//html/body',"./Images/map.jpg")
     print('Done.')
