@@ -62,7 +62,9 @@ Click "Import From Zip" and select the IPA-AGENT zip file. Type in "IMPORT" into
 
 **Step 7**. Once the agent has been imported and training is done, click on the "Fulfillment" option on the left menu bar. Enable the webhook(If it is not enabled), and copy and paste the ngrok https link on the URL field. Add in "/get_recommendations" right at the end of the ngrok link. Scroll to the bottom and click save. Give it some time to save your settings.
 
-**Step 8**. Now open up your telegram app. From the search bar of your chat page, type "IPAAIRBNBBot" click on the result. A chat window will be created with the bot, click 'Start'. You can now test sending some search queries such as "Can you find some recommendations for 2 adults, 1 child and 1 infant to stay in Vienna from 5th June to 17th June?".
+**Step 8**. Set up the link between telegram and dialogflow. From dialogflow, click Integrations. Check the Telegram box. A pop-up will appear, enter the bot_token key and click start. This will integrate the bot and dialogflow together.
+
+**Step 9**. Now open up your telegram app. From the search bar of your chat page, type "IPAAIRBNBBot" click on the result. A chat window will be created with the bot, click 'Start'. You can now test sending some search queries such as "Can you find some recommendations for 2 adults, 1 child and 1 infant to stay in Vienna from 5th June to 17th June?".
 
 **Additional notes**: You can also test dialogs from the google assistant via the dialogflow website located on the right side of the screen.
 Try to paste the following dialog in the chat field.
