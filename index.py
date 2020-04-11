@@ -101,7 +101,7 @@ def process_reponse(response, country, numOfAdults, numOfInfants, numOfChildren,
         if telegramChannel:
             telegram_bot_sendtext(stringResponse, telegramChatID)
         #Send images as an album
-        telegram_bot_sendGroupMedia(listingDetails['picurl'][0:7], telegramChatID, i)
+        telegram_bot_sendGroupMedia(listingDetails['picurl'][0:3], telegramChatID, i)
 
         i+=1
         stringResponse = ""
