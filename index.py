@@ -20,6 +20,7 @@ from folium.features import DivIcon
 import time
 import rpa as r
 from branca.element import Template, MacroElement
+from werkzeug.serving import WSGIRequestHandler
 
 app = Flask(__name__)
 CLIENT_ID = 'NFTR233O0S1IITFK10EHZURRRQOB4UAPI1RYXSKE4HAY4UNU'
@@ -332,4 +333,5 @@ def get_legend_template(htmlText):
 
 # run Flask app
 if __name__ == "__main__":
+    WSGIRequestHandler.protocol_version = "HTTP/1.1"
     app.run()
