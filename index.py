@@ -75,11 +75,22 @@ def process_reponse(response, country, numOfAdults, numOfInfants, numOfChildren,
     i=1
     s = pyshorteners.Shortener()
     for listing in response:
+        print("Retrieving next coords...")
         listingDetails = response[listing]
-        url = s.tinyurl.short(listingDetails['url'])
+        print("Shortening URL...")
+        convertedURL = False
+        while convertedURL == False:
+            try:
+                url = s.tinyurl.short(listingDetails['url'])
+                convertedURL = True
+                print("Successfully converted URL...")
+            except Exception as ex:
+                print("Error shortening URL, retrying...")
+        
         stringResponse = stringResponse + '-----------<a href="'+url+'"> <b>Listing '+str(i)+'</b></a>-----------' + "\n<i>Name</i>: " + listingDetails['name']+ "\n<i>Rating</i>: " + listingDetails['rating']+ "\n<i>Price</i>: " + listingDetails['price']+ "\n<i>Apartment</i>: " + listingDetails['inventory']+ "\n"
 
         #Get venues based on coords
+        print("Getting Venues...")
         coord = listingDetails['coordinates'].split(',')
         nearbyVenues = get_venues(coord[0], coord[1])
         venues = pd.DataFrame(nearbyVenues)
@@ -87,6 +98,7 @@ def process_reponse(response, country, numOfAdults, numOfInfants, numOfChildren,
         stringResponse = stringResponse+'\n<u><i>Top Venues near this listing</i></u>\n'
         
         #Create a map with folium then convert html to png
+        print("Creating Folium map...")
         create_folium_map(nearbyVenues, coord[0], coord[1], telegramChatID)
         convert_html_to_jpg()
 
@@ -99,10 +111,12 @@ def process_reponse(response, country, numOfAdults, numOfInfants, numOfChildren,
         
         #Send text info
         if telegramChannel:
+            print("Sending telegram text...")
             telegram_bot_sendtext(stringResponse, telegramChatID)
         #Send images as an album
+        print("Sending telegram group pics...")
         telegram_bot_sendGroupMedia(listingDetails['picurl'][0:7], telegramChatID, i)
-
+        print("Done sending telegram group pics...")
         i+=1
         stringResponse = ""
     telegram_bot_sendtext("\U0001F601 Search has been completed. Plese review our recommendations, thank you! \U0001F6C4\U00002708\U0001F3E1",telegramChatID)
@@ -182,19 +196,26 @@ def get_venues(latitude, longitude):
     limit=numberOfVenues,
     radius = radius
     )
-    resp = requests.get(url=url, params=params).json()
+    try:
+        resp = requests.get(url=url, params=params).json()
     
-    venues = resp['response']['groups'][0]['items']
+        venues = resp['response']['groups'][0]['items']
 
-    nearby_venues = pd.DataFrame(columns=['Name', 'Category', 'Latitude', 'Longitude'])
-    for venue in venues:
-        df = pd.DataFrame([(venue['venue']['name'], 
+        nearby_venues = pd.DataFrame(columns=['Name', 'Category', 'Latitude', 'Longitude'])
+        for venue in venues:
+            df = pd.DataFrame([(venue['venue']['name'], 
                             venue['venue']['categories'][0]['name'],
                             venue['venue']['location']['lat'], 
                             venue['venue']['location']['lng'])], columns=['Name', 'Category', 'Latitude', 'Longitude'])
-        nearby_venues = nearby_venues.append(df, ignore_index=True)
-    print(nearby_venues.head())
-    
+            nearby_venues = nearby_venues.append(df, ignore_index=True)
+        print(nearby_venues.head())
+    except Exception as ex:
+        print("Foursquare API Error...")
+         df = pd.DataFrame([("---", 
+                            "---",
+                            "---", 
+                            "---")], columns=['Name', 'Category', 'Latitude', 'Longitude'])
+            nearby_venues = nearby_venues.append(df, ignore_index=True)
     return nearby_venues
 
 def telegram_bot_sendtext(bot_message, id):
@@ -202,21 +223,24 @@ def telegram_bot_sendtext(bot_message, id):
     response = bot.sendMessage(chat_id=bot_chatID, text=bot_message, disable_web_page_preview=True, parse_mode="html")
 
 def telegram_bot_sendGroupMedia(bot_pic_URLs, id, listingNumber):
-    imgArray = []
-    bot_chatID = str(id)
+    try:
+        imgArray = []
+        bot_chatID = str(id)
 
-    #Attach image URLs
-    for idx, url in enumerate(bot_pic_URLs):
-        if idx == 0:
-            photo = telegram.InputMediaPhoto(media=url,caption="---------- End of listing "+str(listingNumber)+" ----------",parse_mode="markdown")
-        else:
-            photo = telegram.InputMediaPhoto(media=url,caption=None,parse_mode="markdown")
-        imgArray.append(photo)
+        #Attach image URLs
+        for idx, url in enumerate(bot_pic_URLs):
+            if idx == 0:
+                photo = telegram.InputMediaPhoto(media=url,caption="---------- End of listing "+str(listingNumber)+" ----------",parse_mode="markdown")
+            else:
+                photo = telegram.InputMediaPhoto(media=url,caption=None,parse_mode="markdown")
+            imgArray.append(photo)
     
-    photo1 = telegram.InputMediaPhoto(media=open('Images/map.jpg', 'rb'),caption=None)
-    imgArray.append(photo1)
+        photo1 = telegram.InputMediaPhoto(media=open('Images/map.jpg', 'rb'),caption=None)
+        imgArray.append(photo1)
 
-    response = bot.sendMediaGroup(chat_id=bot_chatID, media=imgArray, disable_notification=True)
+        response = bot.sendMediaGroup(chat_id=bot_chatID, media=imgArray, disable_notification=True)
+    except Exception as ex:
+        print("Telegram group photo error...")
 
 def convert_html_to_jpg():
     URL = "http://127.0.0.1:5000/get_html" #localhost
