@@ -196,31 +196,34 @@ def get_venues(latitude, longitude):
     limit=numberOfVenues,
     radius = radius
     )
-    try:
-        resp = requests.get(url=url, params=params).json()
     
-        venues = resp['response']['groups'][0]['items']
+    foursquareError = False
+    while foursquareError == False:
+        try:
+            resp = requests.get(url=url, params=params).json()
+    
+            venues = resp['response']['groups'][0]['items']
 
-        nearby_venues = pd.DataFrame(columns=['Name', 'Category', 'Latitude', 'Longitude'])
-        for venue in venues:
-            df = pd.DataFrame([(venue['venue']['name'], 
+            nearby_venues = pd.DataFrame(columns=['Name', 'Category', 'Latitude', 'Longitude'])
+            for venue in venues:
+                df = pd.DataFrame([(venue['venue']['name'], 
                             venue['venue']['categories'][0]['name'],
                             venue['venue']['location']['lat'], 
                             venue['venue']['location']['lng'])], columns=['Name', 'Category', 'Latitude', 'Longitude'])
-            nearby_venues = nearby_venues.append(df, ignore_index=True)
-        print(nearby_venues.head())
-    except Exception as ex:
-        print("Foursquare API Error...")
-         df = pd.DataFrame([("---", 
-                            "---",
-                            "---", 
-                            "---")], columns=['Name', 'Category', 'Latitude', 'Longitude'])
-            nearby_venues = nearby_venues.append(df, ignore_index=True)
+                nearby_venues = nearby_venues.append(df, ignore_index=True)
+            print(nearby_venues.head())
+            foursquareError = True
+        except Exception as ex:
+            print("Foursquare API Error... Retrying...")
+
     return nearby_venues
 
 def telegram_bot_sendtext(bot_message, id):
-    bot_chatID = str(id)
-    response = bot.sendMessage(chat_id=bot_chatID, text=bot_message, disable_web_page_preview=True, parse_mode="html")
+    try:
+        bot_chatID = str(id)
+        response = bot.sendMessage(chat_id=bot_chatID, text=bot_message, disable_web_page_preview=True, parse_mode="html")
+    except Exception as ex:
+        print("Telegram text error...")
 
 def telegram_bot_sendGroupMedia(bot_pic_URLs, id, listingNumber):
     try:
