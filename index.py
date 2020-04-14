@@ -119,6 +119,7 @@ def process_reponse(response, country, numOfAdults, numOfInfants, numOfChildren,
         print("Done sending telegram group pics...")
         i+=1
         stringResponse = ""
+    time.sleep(10)
     telegram_bot_sendtext("\U0001F601 Search has been completed. Plese review our recommendations, thank you! \U0001F6C4\U00002708\U0001F3E1",telegramChatID)
 
 def getDurationOfStay(fromDate, toDate):
