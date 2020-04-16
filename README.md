@@ -6,7 +6,7 @@
      style="float: left; margin-right: 0px;" />
 
 <br>
----
+
 
 ## SECTION 2 : EXECUTIVE SUMMARY / PAPER ABSTRACT
 
@@ -19,7 +19,7 @@ To be completed
 | Official Full Name  | Student ID (MTech Applicable)  | Work Items (Who Did What) | Email (Optional) |
 | :------------ |:---------------:| :-----| :-----|
 | LIM LI WEI | A0087855L | --- | E0319479@u.nus.edu |
-| PREM CHANDRAN | A--- | --- | --- |
+| PREM CHANDRAN | A0195324A | --- | E0384955@u.nus.edu |
 | YONG QUAN ZHI, TOMMY | A0195353Y | ---| E0384984@u.nus.edu |
 
 ---
@@ -33,7 +33,7 @@ To be completed
 
 ## SECTION 5 : USER GUIDE
 
-`<Download the user guide>` : <https://github.com/>
+`<Download the user guide>` : <https://github.com/tommyyNUS/ISA-IPA-2020-03-21-IS01PT-GRP-Etika-AirbnbAgent/blob/master/Documents/User%20Guide%20for%20IPA%20Bot%20Project.docx>
 
 Download the guide from the link above for a more detailed description on how to configure, install, deploy the necessary components for this project. 
 
@@ -64,11 +64,11 @@ Click "Import From Zip" and select the IPA-AGENT zip file. Type in "IMPORT" into
 
 **Step 8**. Set up the link between telegram and dialogflow. From dialogflow, click Integrations. Check the Telegram box. A pop-up will appear, enter the bot_token key and click start. This will integrate the bot and dialogflow together.
 
-**Step 9**. Now open up your telegram app. From the search bar of your chat page, type "IPAAIRBNBBot" click on the result. A chat window will be created with the bot, click 'Start'. You can now test sending some search queries such as "Can you find some recommendations for 2 adults, 1 child and 1 infant to stay in Vienna from 5th June to 17th June?".
+**Step 9**. Now open up your telegram app from the smartphone. From the search bar of your chat page, type "IPAAIRBNBBot" click on “IPA-AIRBNB-BOT”. A chat window will be created with the bot, click 'Start'. You can now test sending some search queries such as "Can you find some recommendations for 2 adults, 1 child and 1 infant to stay in Vienna from 5th June to 17th June?". Alternatively, you can open the conversation with “Can you find me some recommendations” and the chatbot will proceed to ask you necessary questions before searching on Airbnb for your recommendations.
 
 **Additional notes**: You can also test dialogs from the google assistant via the dialogflow website located on the right side of the screen.
 
----
+-----------------------------------------------------------------------------------------------------
 
 ## SECTION 6 : PROJECT REPORT / PAPER
 
@@ -76,5 +76,4 @@ Click "Import From Zip" and select the IPA-AGENT zip file. Type in "IMPORT" into
 
 ## SECTION 7 : MISCELLANEOUS
 
-### App URL: [NUS ISS AIRBNB AGENT]()
-- the Chatbot system hosted on ...
+
