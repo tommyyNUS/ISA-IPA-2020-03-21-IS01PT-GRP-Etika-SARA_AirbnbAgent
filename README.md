@@ -32,7 +32,7 @@ Chatbots also known as “conversational agents” are basically software applic
 
 ## SECTION 5 : USER GUIDE
 
-`<Download the user guide>` : <https://github.com/tommyyNUS/ISA-IPA-2020-03-21-IS01PT-GRP-Etika-AirbnbAgent/blob/master/Documents/User%20Guide%20for%20IPA%20Bot%20Project.docx>
+[Download the user guide](http://tiny.cc/92kqnz)
 
 Download the guide from the link above for a more detailed description on how to configure, install, deploy the necessary components for this project. 
 
