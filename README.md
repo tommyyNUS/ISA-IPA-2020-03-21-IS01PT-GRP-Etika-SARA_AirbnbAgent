@@ -22,7 +22,7 @@ Chatbots also known as “conversational agents” are basically software applic
 | :------------ |:---------------:| :-----| :-----|
 | LIM LI WEI | A0087855L | Refer to individual report | E0319479@u.nus.edu |
 | PREM CHANDRAN | A0195324A | Refer to individual report | E0384955@u.nus.edu |
-| YONG QUAN ZHI, TOMMY | A0195353Y | Refer to individual report E0384984@u.nus.edu |
+| YONG QUAN ZHI, TOMMY | A0195353Y | Refer to individual report | E0384984@u.nus.edu |
 
 ## SECTION 4 : VIDEO OF SYSTEM MODELLING & USE CASE DEMO
 
