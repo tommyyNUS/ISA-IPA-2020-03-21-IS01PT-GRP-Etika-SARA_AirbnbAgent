@@ -1,7 +1,7 @@
 ﻿# Agent-IPA-2020-03-21-GRP-Etika
 
-## SECTION 1 : AIRBNB Agent
-## NUS ISS Intelligent Agent
+## SECTION 1 : S.A.R.A AIRBNB Agent
+## NUS ISS Intelligent Process Agent
 <img src="Images/chatbot.png"
      style="float: left; margin-right: 0px;" />
 
@@ -10,26 +10,25 @@
 
 ## SECTION 2 : EXECUTIVE SUMMARY / PAPER ABSTRACT
 
-To be completed
+With the travel industry estimated to be worth about US$11 trillion by 2025 there is a strong necessity for businesses to leverage on IT in order to claim a piece of the market and stay competitve. At the same time, consumers are spolit for choice and always on the look out for the best deals. Accommodation planning is a big part of any travel plans and consumers may not always have the time to source for places to stay as well as building an itinerary for their trip. 
 
----
+To address this issue, the team has decided to produce a solution which will act as a personal conceirge for users and look for best recommendations for accomodations and it's nearby top recommended venues such as restaurants and tourist attractions. Our personal concierge, also known as 'S.A.R.A' which stands for 'Search And Retrieve App', is a chatbot which will leverage on natural language processing and robotic process automation techniques to assist users in their travel planning activities.
+
+Chatbots also known as “conversational agents” are basically software applications that mimic written or spoken human speech for the purposes of simulating a conversation or interaction with a real person. Currently there are two primary ways chatbots are offered to users which are web-based applications or standalone apps.
 
 ## SECTION 3 : CREDITS / PROJECT CONTRIBUTION
 
 | Official Full Name  | Student ID (MTech Applicable)  | Work Items (Who Did What) | Email (Optional) |
 | :------------ |:---------------:| :-----| :-----|
-| LIM LI WEI | A0087855L | --- | E0319479@u.nus.edu |
-| PREM CHANDRAN | A0195324A | --- | E0384955@u.nus.edu |
-| YONG QUAN ZHI, TOMMY | A0195353Y | ---| E0384984@u.nus.edu |
-
----
+| LIM LI WEI | A0087855L | Refer to individual report | E0319479@u.nus.edu |
+| PREM CHANDRAN | A0195324A | Refer to individual report | E0384955@u.nus.edu |
+| YONG QUAN ZHI, TOMMY | A0195353Y | Refer to individual report E0384984@u.nus.edu |
 
 ## SECTION 4 : VIDEO OF SYSTEM MODELLING & USE CASE DEMO
 
-[NUS ISS AIRBNB AGENT](https://youtube.com)
+[SARA AIRBNB AGENT MARKETING VIDEO](https://www.youtube.com/watch?v=t1rJmW_MT9A)
 
-
----
+[SARA AIRBNB AGENT DEMO VIDEO](https://youtu.be/UsykrTc72yw)
 
 ## SECTION 5 : USER GUIDE
 
@@ -76,4 +75,4 @@ Click "Import From Zip" and select the IPA-AGENT zip file. Type in "IMPORT" into
 
 ## SECTION 7 : MISCELLANEOUS
 
-
+-----
