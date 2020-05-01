@@ -37,7 +37,7 @@ Chatbots also known as “conversational agents” are basically software applic
 Download the guide from the link above for a more detailed description on how to configure, install, deploy the necessary components for this project. 
 
 Please ensure you are using python 3.6 or higher.
-Once you have downloaded and unzipped the project file, CD into your project root folder "<your-file-path>/ISA-IPA-2020-03-21-IS01PT-GRP-Etika-AirbnbAgent"
+Once you have downloaded and unzipped the project file, CD into your project root folder "<your-file-path>/ISA-IPA-2020-03-21-IS01PT-GRP-Etika-AirbnbAgent/SystemCode"
 
 **Step 1**. Create a python env.
 "python3 -m venv env" OR use "python -m venv env"
