@@ -37,7 +37,7 @@ Chatbots also known as “conversational agents” are basically software applic
 For a more detailed look at user guide, please refer to appendix 1 of the report for the user guide. 
 
 Please ensure you are using python 3.6 or higher.
-Once you have downloaded and unzipped the project file, CD into your project root folder "<your-file-path>/ISA-IPA-2020-03-21-IS01PT-GRP-Etika-AirbnbAgent/SystemCode"
+Once you have downloaded and unzipped the project file, CD into your project root folder "<your-file-path>/ISA-IPA-2020-03-21-IS01PT-GRP-Etika-SARA_AirbnbAgent/SystemCode"
 
 **Step 1**. Create a python env.
 "python3 -m venv env" OR use "python -m venv env"
@@ -46,7 +46,7 @@ Once you have downloaded and unzipped the project file, CD into your project roo
 For Mac: "source env/bin/activate"
 For Windows: "env\Scripts\activate"
 
-**Step 3**. Enter "pip install -r requirements.txt" OR "pip3 install -r requirements.txt". This will install all the required dependencies.
+**Step 3**. In the command prompt/terminal CD to the project folder "<your-file-path>/ISA-IPA-2020-03-21-IS01PT-GRP-Etika-SARA_AirbnbAgent/SystemCode”. Enter "pip install -r requirements.txt" OR "pip3 install -r requirements.txt".  This will install all the required dependencies.
 
 **Step 4**. Once installation is complete, enter " flask run". This will deploy your server locally on your pc.
 
