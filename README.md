@@ -32,9 +32,9 @@ Chatbots also known as “conversational agents” are basically software applic
 
 ## SECTION 5 : USER GUIDE
 
-[Download the user guide](http://tiny.cc/92kqnz)
+[Download the user guide](http://tiny.cc/q2m5nz)
 
-Download the guide from the link above for a more detailed description on how to configure, install, deploy the necessary components for this project. 
+For a more detailed look at user guide, please refer to appendix 1 of the report for the user guide. 
 
 Please ensure you are using python 3.6 or higher.
 Once you have downloaded and unzipped the project file, CD into your project root folder "<your-file-path>/ISA-IPA-2020-03-21-IS01PT-GRP-Etika-AirbnbAgent/SystemCode"
