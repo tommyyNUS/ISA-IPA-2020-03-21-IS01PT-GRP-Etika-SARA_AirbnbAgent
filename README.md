@@ -71,7 +71,7 @@ Click "Import From Zip" and select the IPA-AGENT zip file. Type in "IMPORT" into
 
 ## SECTION 6 : PROJECT REPORT / PAPER
 
-`<Download the Project Report>` : <https://github.com/>
+[Download the Project Report](http://tiny.cc/vai5nz)
 
 ## SECTION 7 : MISCELLANEOUS
 
