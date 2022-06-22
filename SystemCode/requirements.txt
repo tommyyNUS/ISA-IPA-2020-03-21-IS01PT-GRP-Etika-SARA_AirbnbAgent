@@ -7,7 +7,7 @@ rpa==1.26.0
 Nominatim==0.1
 folium==0.10.1
 pandas==1.0.3
-numpy==1.18.2
+numpy==1.22.0
 geopy==1.21.0
 pyshorteners==1.0.1
 python-telegram-bot==12.5.1
